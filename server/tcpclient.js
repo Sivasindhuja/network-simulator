@@ -11,6 +11,8 @@ client.connect(8080, "127.0.0.1", () => {
 client.on("data", (data) => {
   console.log(`I(client) received ${data}`);
 
+        //console.log(data);-->//<Buffer 53 59 4e 2d 41 43 4b>
+        
   if (data.toString() === "SYN-ACK") {
     setTimeout(() => {
       console.log("Client → Sending ACK");
